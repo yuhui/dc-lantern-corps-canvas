@@ -1,0 +1,695 @@
+<html>
+<head>
+<script type="application/javascript">
+function draw() {
+	var redlantern = document.getElementById("redlantern");
+	if (redlantern.getContext) {
+		var ctx = redlantern.getContext("2d");
+		// background image
+		var img = new Image();
+		img.src = "redlantern.jpg";
+		ctx.drawImage(img, -20, -120);
+		ctx.fillStyle = "rgba(255, 255, 255, 0.6)";
+		ctx.fillRect(0, 0, 300, 300);
+		ctx.save();
+		var lingrad = ctx.createLinearGradient(0, 0, 200, 200);
+		lingrad.addColorStop(0, "#fcc");
+		lingrad.addColorStop(0.8, "red");
+		ctx.translate(85, 85);
+		// black background
+		ctx.beginPath();
+		ctx.fillStyle = "rgba(0, 0, 0, 0.5)";
+		ctx.arc(100, 100, 90, 0, Math.PI*2, true);
+		ctx.fill();
+		// logo global settings
+		ctx.strokeStyle = lingrad;
+		// red ring
+		ctx.beginPath();
+		ctx.lineWidth = 10;
+		ctx.arc(100, 100, 95, 0, Math.PI*2, true);
+		ctx.stroke();
+		// logo global settings
+		ctx.lineWidth = 12.5;
+		// horns
+		ctx.beginPath();
+		ctx.moveTo(60, 186);
+		ctx.lineTo(60, 80);
+		ctx.lineTo(45, 65);
+		ctx.lineTo(45, 23);
+		ctx.moveTo(140, 186);
+		ctx.lineTo(140, 80);
+		ctx.lineTo(155, 65);
+		ctx.lineTo(155, 23);
+		ctx.stroke();
+		// inner circle
+		ctx.beginPath();
+		ctx.lineWidth = 15;
+		ctx.arc(100, 135, 33, 0, Math.PI*2, true);
+		ctx.stroke();
+	}
+
+	var orangelantern = document.getElementById("orangelantern");
+	if (orangelantern.getContext) {
+		var ctx = orangelantern.getContext("2d");
+		// background image
+		var img = new Image();
+		img.src = "orangelantern.jpg";
+		ctx.drawImage(img, -20, -135);
+		ctx.fillStyle = "rgba(255, 255, 255, 0.6)";
+		ctx.fillRect(0, 0, 300, 300);
+		ctx.save();
+		var lingrad = ctx.createLinearGradient(0, 0, 200, 200);
+		lingrad.addColorStop(0, "#eec");
+		lingrad.addColorStop(0.8, "orange");
+		var radgrad = ctx.createRadialGradient(115, 115, 10, 115, 115, 50);
+		radgrad.addColorStop(0, "#eef");
+		radgrad.addColorStop(0.8, "rgba(255, 255, 127, 0.5)");
+		ctx.translate(85, 85);
+		// yellow background
+		ctx.beginPath();
+		ctx.fillStyle = radgrad;
+		ctx.arc(100, 100, 90, 0, Math.PI*2, true);
+		ctx.fill();
+		// logo global settings
+		ctx.strokeStyle = lingrad;
+		// orange ring
+		ctx.beginPath();
+		ctx.lineWidth = 10;
+		ctx.arc(100, 100, 95, 0, Math.PI*2, true);
+		ctx.stroke();
+		// logo global settings
+		ctx.lineWidth = 15;
+		// strokes
+		ctx.beginPath();
+		ctx.moveTo(50, 15);
+		ctx.lineTo(100, 100);
+		ctx.lineTo(150, 15);
+		ctx.moveTo(10, 60);
+		ctx.lineTo(60, 85);
+		ctx.moveTo(35, 175);
+		ctx.lineTo(75, 130);
+		ctx.moveTo(190, 60);
+		ctx.lineTo(140, 85);
+		ctx.moveTo(165, 175);
+		ctx.lineTo(125, 130);
+		ctx.moveTo(100, 100);
+		ctx.stroke();
+		// inner circle
+		ctx.beginPath();
+		ctx.arc(100, 100, 44, 0, Math.PI*2, true);
+		ctx.stroke();
+	}
+
+	var sinestrocorps = document.getElementById("sinestrocorps");
+	if (sinestrocorps.getContext) {
+		var ctx = sinestrocorps.getContext("2d");
+		// background image
+		var img = new Image();
+		img.src = "sinestrocorps.jpg";
+		ctx.drawImage(img, -20, -105);
+		ctx.fillStyle = "rgba(255, 255, 255, 0.6)";
+		ctx.fillRect(0, 0, 300, 300);
+		ctx.save();
+		var lingrad = ctx.createLinearGradient(0, 0, 200, 200);
+		lingrad.addColorStop(0, "#ffc");
+		lingrad.addColorStop(0.8, "yellow");
+		ctx.translate(85, 85);
+		// black background
+		ctx.beginPath();
+		ctx.fillStyle = "rgba(0, 0, 0, 0.5)";
+		ctx.arc(100, 100, 90, 0, Math.PI*2, true);
+		ctx.fill();
+		// logo global settings
+		ctx.strokeStyle = lingrad;
+		// yellow ring
+		ctx.beginPath();
+		ctx.lineWidth = 10;
+		ctx.arc(100, 100, 95, 0, Math.PI*2, true);
+		ctx.stroke();
+		// logo global settings
+		ctx.lineWidth = 15;
+		// upper curve
+		ctx.beginPath();
+		ctx.arc(100, 100, 70, -(Math.PI/180)*135, -(Math.PI/180)*45, false);
+		ctx.stroke();
+		// upper left stroke
+		ctx.beginPath();
+		ctx.moveTo(85, 64);
+		ctx.lineTo(70, 37);
+		// upper right stroke
+		ctx.moveTo(130, 37);
+		ctx.lineTo(115, 64);
+		// left wing
+		ctx.moveTo(85, 137);
+		ctx.lineTo(73, 165);
+		ctx.quadraticCurveTo(15.5, 134, 35.5, 73);
+		ctx.lineTo(16, 60);
+		// right wing
+		ctx.moveTo(115, 137);
+		ctx.lineTo(127, 165);
+		ctx.quadraticCurveTo(184.5, 134, 164.5, 73);
+		ctx.lineTo(184, 60);
+		ctx.stroke();
+		// inner circle
+		ctx.beginPath();
+		ctx.arc(100, 100, 40, 0, Math.PI*2, true);
+		ctx.stroke();
+	}
+
+	var greenlantern = document.getElementById("greenlantern");
+	if (greenlantern.getContext) {
+		var ctx = greenlantern.getContext("2d");
+		// background image
+		var img = new Image();
+		img.src = "greenlantern.jpg";
+		ctx.drawImage(img, -280, -100);
+		ctx.fillStyle = "rgba(255, 255, 255, 0.6)";
+		ctx.fillRect(0, 0, 300, 300);
+		ctx.save();
+		var lingrad = ctx.createLinearGradient(0, 0, 200, 200);
+		lingrad.addColorStop(0, "#cfc");
+		lingrad.addColorStop(0.8, "green");
+		// logo global settings
+		ctx.strokeStyle = lingrad;
+		ctx.translate(85, 85);
+		// green ring
+		ctx.beginPath();
+		ctx.lineWidth = 10;
+		ctx.arc(100, 100, 95, 0, Math.PI*2, true);
+		ctx.stroke();
+		ctx.beginPath();
+		ctx.fillStyle = "rgba(255, 255, 255, 0.5)";
+		ctx.arc(100, 100, 90, 0, Math.PI*2, true);
+		ctx.fill();
+		// logo global settings
+		ctx.fillStyle = lingrad;
+		// top bar
+		ctx.beginPath();
+		ctx.fillRect(40, 30, 120, 25);
+		// bottom bar
+		ctx.beginPath();
+		ctx.fillRect(40, 145, 120, 25);
+		// inner circle
+		ctx.beginPath();
+		ctx.lineWidth = 25;
+		ctx.arc(100, 100, 45, 0, Math.PI*2, true);
+		ctx.stroke();
+	}
+
+	var bluelantern = document.getElementById("bluelantern");
+	if (bluelantern.getContext) {
+		var ctx = bluelantern.getContext("2d");
+		// background image
+		var img = new Image();
+		img.src = "bluelantern.jpg";
+		ctx.drawImage(img, -20, -80);
+		ctx.fillStyle = "rgba(255, 255, 255, 0.6)";
+		ctx.fillRect(0, 0, 300, 300);
+		ctx.save();
+		var lingrad = ctx.createLinearGradient(0, 0, 200, 200);
+		lingrad.addColorStop(0, "#ccf");
+		lingrad.addColorStop(0.8, "blue");
+		// logo global settings
+		ctx.strokeStyle = lingrad;
+		ctx.translate(85, 85);
+		ctx.beginPath();
+		ctx.fillStyle = "rgba(255, 255, 255, 0.5)";
+		ctx.arc(100, 100, 90, 0, Math.PI*2, true);
+		ctx.fill();
+		// blue ring
+		ctx.beginPath();
+		ctx.lineWidth = 10;
+		ctx.arc(100, 100, 95, 0, Math.PI*2, true);
+		ctx.stroke();
+		// logo global settings
+		ctx.lineWidth = 15;
+		// top stroke
+		ctx.beginPath();
+		ctx.moveTo(100, 60);
+		ctx.lineTo(100, 25);
+		// upper curve
+		ctx.moveTo(68, 32);
+		ctx.quadraticCurveTo(100, 18, 132, 32);
+		// bottom stroke
+		ctx.moveTo(100, 140);
+		ctx.lineTo(100, 175);
+		// bottom curve
+		ctx.moveTo(68, 168);
+		ctx.quadraticCurveTo(100, 182, 132, 168);
+		// left wing
+		ctx.moveTo(76, 69);
+		ctx.lineTo(53, 41);
+		ctx.bezierCurveTo(15, 66.6, 15, 133.2, 53, 159);
+		ctx.lineTo(68, 141);
+		// right wing
+		ctx.moveTo(124, 69);
+		ctx.lineTo(147, 41);
+		ctx.bezierCurveTo(185, 66.6, 185, 133.2, 147, 159);
+		ctx.lineTo(132, 141);
+		ctx.stroke();
+		// inner circle
+		ctx.beginPath();
+		ctx.arc(100, 100, 40, 0, Math.PI*2, true);
+		ctx.stroke();
+	}
+
+	var indigotribe = document.getElementById("indigotribe");
+	if (indigotribe.getContext) {
+		var ctx = indigotribe.getContext("2d");
+		// background image
+		var img = new Image();
+		img.src = "indigotribe.jpg";
+		ctx.drawImage(img, -20, -80);
+		ctx.fillStyle = "rgba(255, 255, 255, 0.6)";
+		ctx.fillRect(0, 0, 300, 300);
+		ctx.save();
+		var lingrad = ctx.createLinearGradient(0, 0, 200, 200);
+		lingrad.addColorStop(0, "#cef");
+		lingrad.addColorStop(0.8, "#6f00ff");
+		// logo global settings
+		ctx.translate(85, 85);
+		ctx.strokeStyle = lingrad;
+		// indigo ring
+		ctx.beginPath();
+		ctx.lineWidth = 10;
+		ctx.arc(100, 100, 95, 0, Math.PI*2, true);
+		ctx.stroke();
+		ctx.beginPath();
+		ctx.fillStyle = "rgba(255, 255, 255, 0.5)";
+		ctx.arc(100, 100, 90, 0, Math.PI*2, true);
+		ctx.fill();
+		// logo global settings
+		ctx.fillStyle = lingrad;
+		// top indigo arrow
+		ctx.beginPath();
+		ctx.moveTo(100, 10);
+		ctx.lineTo(30, 70);
+		ctx.lineTo(50, 70);
+		ctx.lineTo(100, 30);
+		ctx.lineTo(150, 70);
+		ctx.lineTo(170, 70);
+		ctx.closePath();
+		ctx.fill();
+		// bottom indigo arrow
+		ctx.beginPath();
+		ctx.moveTo(100, 190);
+		ctx.lineTo(30, 130);
+		ctx.lineTo(50, 130);
+		ctx.lineTo(100, 170);
+		ctx.lineTo(150, 130);
+		ctx.lineTo(170, 130);
+		ctx.closePath();
+		ctx.fill();
+		// inner circle
+		ctx.beginPath();
+		ctx.lineWidth = 20;
+		ctx.arc(100, 100, 45, 0, Math.PI*2, true);
+		ctx.stroke();
+	}
+
+	var starsapphire = document.getElementById("starsapphire");
+	if (starsapphire.getContext) {
+		var ctx = starsapphire.getContext("2d");
+		// background image
+		var img = new Image();
+		img.src = "starsapphire.jpg";
+		ctx.drawImage(img, -20, -100);
+		ctx.fillStyle = "rgba(255, 255, 255, 0.6)";
+		ctx.fillRect(0, 0, 300, 300);
+		ctx.save();
+		var lingrad = ctx.createLinearGradient(0, 0, 200, 200);
+		lingrad.addColorStop(0, "#fef");
+		lingrad.addColorStop(0.8, "fuchsia");
+		// logo global settings
+		ctx.strokeStyle = lingrad;
+		ctx.translate(85, 85);
+		ctx.beginPath();
+		ctx.fillStyle = "rgba(255, 255, 255, 0.5)";
+		ctx.arc(100, 100, 90, 0, Math.PI*2, true);
+		ctx.fill();
+		// sapphire ring
+		ctx.beginPath();
+		ctx.lineWidth = 10;
+		ctx.arc(100, 100, 95, 0, Math.PI*2, true);
+		ctx.stroke();
+		// logo global settings
+		ctx.lineWidth = 1;
+		ctx.fillStyle = lingrad;
+		// outer circle
+		ctx.beginPath();
+		ctx.arc(100, 100, 40, 0, Math.PI*2, true);
+		ctx.fill();
+		// top triangle
+		ctx.beginPath();
+		ctx.moveTo(100, 10);
+		ctx.lineTo(120, 70);
+		ctx.lineTo(80, 70);
+		ctx.closePath();
+		ctx.fill();
+		// bottom triangle
+		ctx.beginPath();
+		ctx.moveTo(100, 190);
+		ctx.lineTo(120, 130);
+		ctx.lineTo(80, 130);
+		ctx.closePath();
+		ctx.fill();
+		// left triangle
+		ctx.beginPath();
+		ctx.moveTo(10, 100);
+		ctx.lineTo(70, 80);
+		ctx.lineTo(70, 120);
+		ctx.closePath();
+		ctx.fill();
+		// right triangle
+		ctx.beginPath();
+		ctx.moveTo(190, 100);
+		ctx.lineTo(130, 80);
+		ctx.lineTo(130, 120);
+		ctx.closePath();
+		ctx.fill();
+		// upper left triangle
+		ctx.beginPath();
+		ctx.moveTo(50, 50);
+		ctx.lineTo(80, 65);
+		ctx.lineTo(65, 95);
+		ctx.closePath();
+		ctx.fill();
+		// upper right triangle
+		ctx.beginPath();
+		ctx.moveTo(150, 50);
+		ctx.lineTo(120, 65);
+		ctx.lineTo(135, 95);
+		ctx.closePath();
+		ctx.fill();
+		// lower right triangle
+		ctx.beginPath();
+		ctx.moveTo(150, 150);
+		ctx.lineTo(120, 135);
+		ctx.lineTo(135, 105);
+		ctx.closePath();
+		ctx.fill();
+		// lower right triangle
+		ctx.beginPath();
+		ctx.moveTo(50, 150);
+		ctx.lineTo(80, 135);
+		ctx.lineTo(65, 105);
+		ctx.closePath();
+		ctx.fill();
+		// inner circle
+		ctx.fillStyle = "white";
+		ctx.translate(50, 20);
+		ctx.scale(0.5, 0.8);
+		ctx.beginPath();
+		ctx.arc(100, 100, 30, 0, Math.PI*2, true);
+		ctx.fill();
+	}
+
+	var blacklantern = document.getElementById("blacklantern");
+	if (blacklantern.getContext) {
+		var ctx = blacklantern.getContext("2d");
+		// background image
+		var img = new Image();
+		img.src = "blacklantern.jpg";
+		ctx.drawImage(img, -15, -60);
+		ctx.fillStyle = "rgba(255, 255, 255, 0.6)";
+		ctx.fillRect(0, 0, 300, 300);
+		ctx.save();
+		var lingrad = ctx.createLinearGradient(0, 0, 200, 200);
+		lingrad.addColorStop(0, "#ccc");
+		lingrad.addColorStop(0.8, "black");
+		// logo global settings
+		ctx.strokeStyle = lingrad;
+		ctx.translate(85, 85);
+		ctx.beginPath();
+		ctx.fillStyle = "rgba(255, 255, 255, 0.5)";
+		ctx.arc(100, 100, 90, 0, Math.PI*2, true);
+		ctx.fill();
+		// black ring
+		ctx.beginPath();
+		ctx.lineWidth = 10;
+		ctx.arc(100, 100, 95, 0, Math.PI*2, true);
+		ctx.stroke();
+		// logo global settings
+		ctx.fillStyle = lingrad;
+		// left bar
+		ctx.beginPath();
+		ctx.moveTo(26, 95);
+		ctx.lineTo(26, 58.5);
+		ctx.quadraticCurveTo(36, 41, 50, 31);
+		ctx.lineTo(50, 95);
+		ctx.closePath();
+		ctx.fill();
+		// left middle bar
+		ctx.beginPath();
+		ctx.moveTo(57, 95);
+		ctx.lineTo(57, 26.5);
+		ctx.quadraticCurveTo(67, 20.5, 81, 17);
+		ctx.lineTo(81, 95);
+		ctx.closePath();
+		ctx.fill();
+		// middle bar
+		ctx.beginPath();
+		ctx.moveTo(88, 95);
+		ctx.lineTo(88, 16);
+		ctx.quadraticCurveTo(100, 14, 112, 16);
+		ctx.lineTo(112, 95);
+		ctx.closePath();
+		ctx.fill();
+		// right middle bar
+		ctx.beginPath();
+		ctx.moveTo(143, 95);
+		ctx.lineTo(143, 26.5);
+		ctx.quadraticCurveTo(133, 20.5, 119, 17);
+		ctx.lineTo(119, 95);
+		ctx.closePath();
+		ctx.fill();
+		// right bar
+		ctx.beginPath();
+		ctx.moveTo(174, 95);
+		ctx.lineTo(174, 58.5);
+		ctx.quadraticCurveTo(164, 41, 150, 31);
+		ctx.lineTo(150, 95);
+		ctx.closePath();
+		ctx.fill();
+		// bottom black triangle
+		ctx.beginPath();
+		ctx.lineWidth = 15;
+		ctx.moveTo(27, 110);
+		ctx.lineTo(173, 110);
+		ctx.lineTo(100, 180);
+		ctx.closePath();
+		ctx.stroke();
+	}
+
+	var whitelantern = document.getElementById("whitelantern");
+	if (whitelantern.getContext) {
+		var ctx = whitelantern.getContext("2d");
+		// background image
+		var img = new Image();
+		img.src = "whitelantern.jpg";
+		ctx.drawImage(img, -350, -10);
+		ctx.fillStyle = "rgba(255, 255, 255, 0.6)";
+		ctx.fillRect(0, 0, 300, 300);
+		ctx.save();
+		var lingrad = ctx.createLinearGradient(0, 0, 200, 200);
+		lingrad.addColorStop(0, "#ccc");
+		lingrad.addColorStop(0.8, "white");
+		// logo global settings
+		ctx.strokeStyle = lingrad;
+		ctx.translate(85, 85);
+		ctx.beginPath();
+		ctx.fillStyle = "rgba(191, 191, 191, 0.5)";
+		ctx.arc(100, 100, 90, 0, Math.PI*2, true);
+		ctx.fill();
+		// white ring
+		ctx.beginPath();
+		ctx.lineWidth = 10;
+		ctx.strokeStyle = lingrad;
+		ctx.arc(100, 100, 95, 0, Math.PI*2, true);
+		ctx.stroke();
+		// logo global settings
+		ctx.fillStyle = lingrad;
+		// first arrow
+		ctx.beginPath();
+		ctx.moveTo(11, 66);
+		ctx.lineTo(16, 54);
+		ctx.lineTo(40, 110);
+		ctx.closePath();
+		ctx.fill();
+		// second arrow
+		ctx.beginPath();
+		ctx.moveTo(30, 36);
+		ctx.lineTo(40, 26);
+		ctx.lineTo(62, 104);
+		ctx.closePath();
+		ctx.fill();
+		// third arrow
+		ctx.beginPath();
+		ctx.moveTo(58, 14);
+		ctx.lineTo(73, 9);
+		ctx.lineTo(86, 100);
+		ctx.closePath();
+		ctx.fill();
+		// fourth arrow
+		ctx.beginPath();
+		ctx.moveTo(92, 5);
+		ctx.lineTo(108, 5);
+		ctx.lineTo(100, 100);
+		ctx.closePath();
+		ctx.fill();
+		// fifth arrow
+		ctx.beginPath();
+		ctx.moveTo(142, 14);
+		ctx.lineTo(127, 9);
+		ctx.lineTo(114, 100);
+		ctx.closePath();
+		ctx.fill();
+		// sixth arrow
+		ctx.beginPath();
+		ctx.moveTo(170, 36);
+		ctx.lineTo(160, 26);
+		ctx.lineTo(138, 104);
+		ctx.closePath();
+		ctx.fill();
+		// seventh arrow
+		ctx.beginPath();
+		ctx.moveTo(189, 66);
+		ctx.lineTo(184, 54);
+		ctx.lineTo(160, 110);
+		ctx.closePath();
+		ctx.fill();
+		// middle arc
+		ctx.beginPath();
+		ctx.moveTo(10, 130);
+		ctx.bezierCurveTo(45, 45, 155, 45, 190, 130);
+		ctx.stroke();
+		// bottom white triangle
+		ctx.beginPath();
+		ctx.lineWidth = 12;
+		ctx.moveTo(55, 120);
+		ctx.lineTo(145, 120);
+		ctx.lineTo(100, 190);
+		ctx.closePath();
+		ctx.stroke();
+	}
+}
+
+function showbox(lanterncorps) {
+	var c = document.getElementsByClassName('logobox');
+	for (var i = 0; i < c.length; i = i + 1) {
+		c[i].style.display = "none";
+	}
+	document.getElementById(lanterncorps + 'div').style.display = "block";
+}
+</script>
+<style type="text/css">
+#header {
+	font-size: 2.5em;
+	text-align: center;
+}
+ul {
+	text-align: center;
+}
+li {
+	display: inline;
+	padding: 1em;
+}
+.logobox {
+	text-align: center;
+	padding: 1em;
+	display: none;
+}
+.logobox p {
+	font-size: 3em;
+	margin: 0.5em 0 auto;
+}
+#redlanterndiv {
+	color: red;
+}
+#orangelanterndiv {
+	color: orange;
+}
+#sinestrocorpsdiv {
+	color: #dd0;
+}
+#greenlanterndiv {
+	color: green;
+}
+#bluelanterndiv {
+	color: blue;
+}
+#indigotribediv {
+	color: #6f00ff;
+}
+#starsapphirediv {
+	color: fuchsia;
+}
+#blacklanterndiv {
+	color: black;
+}
+#whitelanterndiv {
+	color: grey;
+}
+#footer {
+	text-align: center;
+	font-size: 0.8em;
+}
+</style>
+</head>
+<body onload="draw();">
+   <div style="display:none;"><img src="redlantern.jpg"/><img src="orangelantern.jpg"/><img src="sinestrocorps.jpg"/><img src="greenlantern.jpg"/><img src="bluelantern.jpg"/><img src="indigotribe.jpg"/><img src="starsapphire.jpg"/><img src="blacklantern.jpg"/><img src="whitelantern.jpg"/></div>
+   <h1 id="header"><a name="top">Display a Lantern Corps!</h1>
+   <ul>
+      <li><a href="#top" onclick="showbox('redlantern');">Red Lantern Corps</a></li>
+      <li><a href="#top" onclick="showbox('orangelantern');">Orange Lantern Corps</a></li>
+      <li><a href="#top" onclick="showbox('sinestrocorps');">Sinestro Corps</a></li>
+      <li><a href="#top" onclick="showbox('greenlantern');">Green Lantern Corps</a></li>
+   </ul>
+   <ul>
+      <li><a href="#top" onclick="showbox('bluelantern');">Blue Lantern Corps</a></li>
+      <li><a href="#top" onclick="showbox('indigotribe');">Indigo Tribe</a></li>
+      <li><a href="#top" onclick="showbox('starsapphire');">Star Sapphires</a></li>
+   </ul>
+   <ul>
+      <li><a href="#top" onclick="showbox('blacklantern');">Black Lantern Corps</a></li>
+      <li><a href="#top" onclick="showbox('whitelantern');">White Lantern Corps</a></li>
+   </ul>
+   <div id="redlanterndiv" class="logobox">
+      <canvas id="redlantern" width="300" height="300"></canvas>
+      <p>Red Lantern Corps</p>
+   </div>
+   <div id="orangelanterndiv" class="logobox">
+      <canvas id="orangelantern" width="300" height="300"></canvas>
+      <p>Orange Lantern Corps</p>
+   </div>
+   <div id="sinestrocorpsdiv" class="logobox">
+      <canvas id="sinestrocorps" width="300" height="300"></canvas>
+      <p>Sinestro Corps</p>
+   </div>
+   <div id="greenlanterndiv" class="logobox">
+      <canvas id="greenlantern" width="300" height="300"></canvas>
+      <p>Green Lantern Corps</p>
+   </div>
+   <div id="bluelanterndiv" class="logobox">
+      <canvas id="bluelantern" width="300" height="300"></canvas>
+      <p>Blue Lantern Corps</p>
+   </div>
+   <div id="indigotribediv" class="logobox">
+      <canvas id="indigotribe" width="300" height="300"></canvas>
+      <p>Indigo Tribe</p>
+   </div>
+   <div id="starsapphirediv" class="logobox">
+      <canvas id="starsapphire" width="300" height="300"></canvas>
+      <p>Star Sapphires</p>
+   </div>
+   <div id="blacklanterndiv" class="logobox">
+      <canvas id="blacklantern" width="300" height="300"></canvas>
+      <p>Black Lantern Corps</p>
+   </div>
+   <div id="whitelanterndiv" class="logobox">
+      <canvas id="whitelantern" width="300" height="300"></canvas>
+      <p>White Lantern Corps</p>
+   </div>
+   <p id="footer">All images are copyright DC Comics.</p>
+</body>
+</html>

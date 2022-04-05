@@ -1,0 +1,83 @@
+<html>
+<head>
+<script type="text/javascript">
+function draw() {
+	var flag = document.getElementById("flag");
+	if (flag.getContext) {
+		var ctx = flag.getContext("2d");
+
+		// upper red
+		var lingrad = ctx.createLinearGradient(0, 0, 300, 100);
+		lingrad.addColorStop(0, "red");
+		lingrad.addColorStop(0.75, "#fcc");
+		ctx.fillStyle = lingrad;
+		ctx.fillRect(0, 0, 300, 100);
+
+		// lower white
+		ctx.fillStyle = "rgba(255, 255, 255, 0.7)";
+		ctx.fillRect(0, 100, 300, 200);
+		ctx.strokeStyle = "#aaa";
+		ctx.moveTo(0, 100);
+		ctx.lineTo(0, 200);
+		ctx.lineTo(300, 200);
+		ctx.lineTo(300, 100);
+		ctx.stroke();
+
+		// crescent and stars
+		ctx.fillStyle = "white";
+		ctx.strokeStyle = "white";
+
+		// crescent
+		ctx.beginPath();
+		ctx.moveTo(80, 10);
+		ctx.bezierCurveTo(10, 15, 10, 85, 80, 90);
+		ctx.quadraticCurveTo(15, 50, 80, 10);
+		ctx.closePath();
+		ctx.fill();
+
+		// star
+		ctx.save();
+		ctx.translate(105, 28);
+		drawStar(ctx, 20);
+		ctx.translate(20, 16);
+		drawStar(ctx, 20);
+		ctx.translate(-6, 24);
+		drawStar(ctx, 20);
+		ctx.translate(-28, 0);
+		drawStar(ctx, 20);
+		ctx.translate(-6, -24);
+		drawStar(ctx, 20);
+		ctx.restore();
+
+		// background image
+		ctx.globalCompositeOperation = 'destination-over';
+		var img = new Image();
+		img.src = "Singapore_Skyline_Panorama_touchup.png";
+		ctx.translate(0, 150);
+		ctx.scale(0.12, 0.12);
+		ctx.drawImage(img, 0, -430);
+
+	}
+	function drawStar(ctx, r) {  
+		ctx.save();
+		ctx.rotate(Math.PI/(10/3));
+		ctx.scale(0.6, 0.6);
+		ctx.beginPath();
+		ctx.moveTo(r, 0);
+		for (var i = 0; i < 5; i = i + 1) {
+			ctx.rotate(4*Math.PI/5);
+			ctx.lineTo(r, 0);
+		}
+		ctx.closePath();
+		ctx.fill();
+		ctx.restore();
+	}
+}
+</script>
+<title>Singapore national flag</title>
+</head>
+<body onload="draw();">
+   <img src="Singapore_Skyline_Panorama_touchup.png" style="display:none;"/>
+   <canvas id="flag" width="300" height="200"></canvas>
+</body>
+</html>
